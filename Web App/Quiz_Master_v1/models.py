@@ -11,3 +11,11 @@ class User(db.Model, UserMixin):
     created_date = db.Column(db.DateTime, default=datetime.utcnow().date())
     updated_date = db.Column(db.DateTime, default=datetime.utcnow().date())
 
+# class Quiz(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     title = db.Column(db.String(150))
+#     questions = db.relationship('Question', backref='quiz', lazy=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#     created_date = db.Column(db.DateTime, default=datetime.utcnow().date())
+#     updated_date = db.Column(db.DateTime, default=datetime.utcnow().date())
+
