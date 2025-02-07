@@ -11,7 +11,6 @@ with open('data.csv', 'r') as file:
     data = [i.split(',') for i in data]
     for i in data:
         i[0],i[1],i[2] = i[0].strip(),i[1].strip(),i[2].strip()
-print(data)
 
 
 # Templates:
@@ -95,7 +94,7 @@ def index():
                         student_data.append(item)
                 if student_data:
                     total_marks = sum(int(item[2]) for item in student_data)
-                    return render_template_string(student_template, student_data=student_data, total_marks=total_marks)
+                    return render_template_string(student_template, student_data=student_data, total_marks=total_marks), 200
                 else:
                     return render_template_string(error_template)
 
@@ -133,4 +132,7 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
+    
+    
+
